@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do</title>
+
+
+
+
+
+</head>
+
+
+<body>
+       <h1>Adicione uma tarefa</h1>
+    <input type="text" id="tarefa"> <button onclick="adicionarTarefa()">Adicionar</button>
+
+
+       <h1>Lista de Tarefas</h1>
+    
+<ul id=listaDeTarefas></ul>
+
+
+
+<script>
+function adicionarTarefa() {
+
+    let tarefaDigitada = document.getElementById("tarefa").value;
+
+    document.getElementById("listaDeTarefas").innerText = tarefaDigitada;
+
+
+
+
+
+}
+
+</script>
+</body>
+</html>
