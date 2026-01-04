@@ -1,11 +1,89 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do</title>
 
+<style> 
 
+
+
+    .tarefasDiarias {
+
+        display: flex;
+        flex-direction: column;
+        background-color: green;
+        padding: 100px;
+        gap: 8px;
+
+        margin-left: 100px;
+        margin-right: 1000px;
+        border-radius: 50px;
+    }
+
+    .tarefasParaFazer{
+
+           display: flex;
+        flex-direction: column;
+        background-color: rgb(240, 169, 16);
+        padding: 100px;
+        gap: 8px;
+          margin-left: 100px;
+        margin-right: 1000px;
+          border-radius: 50px;
+    }  
+
+    .titulo1 { 
+        
+font: arial;
+        font-size: 50px;
+        margin-left: 300px;
+        background-color: green;
+        margin-right: 1250px;
+    }
+
+
+    .titulo2{
+    font-size: 50px;
+        margin-left: 300px;
+        background-color: rgb(240, 169, 16);
+        margin-right: 1250px;
+
+    }
+
+
+    .blocoFuturamente{
+
+      margin-left: 300px;
+    }
+
+
+    .blocoDiarias {
+
+      margin-left: 300px;
+    }
+
+
+
+
+
+
+    .tarefasConcluidas {
+
+  
+
+
+    }
+    .tarefasConcluidasLista {
+      
+  
+    }
+
+
+
+
+</style>
 
 
 
@@ -13,26 +91,40 @@
 
 
 <body>
-       <h1>Adicione uma tarefa diária</h1>
+    <script src="ToDo.js"></script>
+
+
+<h1 class="titulo1"> Tarefas Diárias</h1>
+<div class="blocoDiarias">
+<h1>Adicione uma tarefa diária</h1>
     <input type="text" id="tarefa"> <button onclick="adicionarTarefa()">Adicionar</button>
+</div>
 
-    <h1>Adicione uma tarefa de longo prazo</h1>
+
+<ul id="tarefasDiarias" class="tarefasDiarias"></ul>
+
+    <h1 class="titulo2">Futuramente</h1>
+
+    <div class="blocoFuturamente">
    <input type="text" id="tarefaLongoPrazo"> <button onclick="adicionarTarefaLongoPrazo()">Adicionar</button>
-
-
-      
-    
-<ul id=listaDeTarefas></ul>
-
-<h1>Tarefas Diárias</h1>          
-<ul id="tarefasDiarias"></ul>
-
 <h1>Tarefas Longo Prazo</h1>
-<ul id="tarefasParaFazer"></ul>
+</div>
+<ul id="tarefasParaFazer" class="tarefasParaFazer"></ul>
 
 
 
+<div class="tarefasConcluidas">
+<h1>Tarefas Concluidas</h1>
 
+
+<ul class="tarefasConcluidasLista">
+ <li> x </li>
+  <li> s</li>
+  <li>x</li>
+  <li> dsa</li>
+</ul>
+
+</div>
 
 <script>
 function adicionarTarefa() {
@@ -54,6 +146,7 @@ function adicionarTarefaLongoPrazo() {
     document.getElementById("tarefasParaFazer").innerText = longoPrazoDigitada;
 }
 
-</script>
+    </script>
+
 </body>
 </html>
