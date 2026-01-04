@@ -13,13 +13,24 @@
 
 
 <body>
-       <h1>Adicione uma tarefa</h1>
+       <h1>Adicione uma tarefa diária</h1>
     <input type="text" id="tarefa"> <button onclick="adicionarTarefa()">Adicionar</button>
 
+    <h1>Adicione uma tarefa de longo prazo</h1>
+   <input type="text" id="tarefaLongoPrazo"> <button onclick="adicionarTarefaLongoPrazo()">Adicionar</button>
 
-       <h1>Lista de Tarefas</h1>
+
+      
     
 <ul id=listaDeTarefas></ul>
+
+<h1>Tarefas Diárias</h1>          
+<ul id="tarefasDiarias"></ul>
+
+<h1>Tarefas Longo Prazo</h1>
+<ul id="tarefasParaFazer"></ul>
+
+
 
 
 
@@ -28,12 +39,19 @@ function adicionarTarefa() {
 
     let tarefaDigitada = document.getElementById("tarefa").value;
 
-    document.getElementById("listaDeTarefas").innerText = tarefaDigitada;
+   // document.getElementById("tarefasDiarias").innerText = tarefaDigitada;//
 
+    let lista = document.createElement("li");
+    lista.innerText = tarefaDigitada;
+    document.getElementById("tarefasDiarias").appendChild(lista);
+    document.getElementById("tarefa").value = "";
+}
 
+function adicionarTarefaLongoPrazo() {
 
+    let longoPrazoDigitada = document.getElementById("tarefaLongoPrazo").value;
 
-
+    document.getElementById("tarefasParaFazer").innerText = longoPrazoDigitada;
 }
 
 </script>
