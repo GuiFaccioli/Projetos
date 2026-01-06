@@ -9,11 +9,13 @@
 
 
 
+    
+
     .tarefasDiarias {
 
         display: flex;
         flex-direction: column;
-        background-color: green;
+        background-color: rgb(240, 169, 16);
         padding: 100px;
         gap: 8px;
 
@@ -39,8 +41,11 @@
 font: arial;
         font-size: 50px;
         margin-left: 300px;
-        background-color: green;
+        background-color: rgb(240, 169, 16);
         margin-right: 1250px;
+        margin-left: 100px;
+        margin-right: 1650px;
+        border-radius: 50px;
     }
 
 
@@ -49,7 +54,9 @@ font: arial;
         margin-left: 300px;
         background-color: rgb(240, 169, 16);
         margin-right: 1250px;
-
+margin-left: 100px;
+        margin-right: 1700px;
+        border-radius: 50px;
     }
 
 
@@ -69,18 +76,77 @@ font: arial;
 
 
 
-    .tarefasConcluidas {
+.tarefasConcluidas {
 
-  
-
-
-    }
-    .tarefasConcluidasLista {
-      
-  
-    }
+  background-color: antiquewhite;
+  margin-left: 100px;
+        margin-right: 1000px;
+        border-radius: 50px;
+         padding: 10px;
+}
 
 
+.tarefasConcluidasLista {
+
+ background-color: antiquewhite;
+margin-left: 100px;
+        margin-right: 1000px;
+        border-radius: 50px;
+        padding: 100px;
+}
+
+
+li {
+
+font-size: 50px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px;
+}
+
+/* BOTÕES */
+
+.botaoFeito {
+   padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: rgb(255, 252, 89);
+
+  transition: 
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.botaoFeito:hover {
+
+    transform: scale(1.15);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+
+
+}
+
+button {
+
+     padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+
+  transition: 
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+button:hover {
+   transform: scale(1.15);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+
+}
 
 
 </style>
@@ -91,13 +157,13 @@ font: arial;
 
 
 <body>
-    <script src="ToDo.js"></script>
+<script src="ToDo.js"></script>
 
 
 <h1 class="titulo1"> Tarefas Diárias</h1>
 <div class="blocoDiarias">
-<h1>Adicione uma tarefa diária</h1>
-    <input type="text" id="tarefa"> <button onclick="adicionarTarefa()">Adicionar</button>
+<h1>Adicione uma tarefa diária</h1> 
+<input type="text" id="tarefa"> <button onclick="adicionarTarefa()">Adicionar</button>
 </div>
 
 
@@ -115,38 +181,89 @@ font: arial;
 
 <div class="tarefasConcluidas">
 <h1>Tarefas Concluidas</h1>
-
-
-<ul class="tarefasConcluidasLista">
- <li> x </li>
-  <li> s</li>
-  <li>x</li>
-  <li> dsa</li>
-</ul>
-
 </div>
+
+<ul id="tarefasConcluidasLista" class="tarefasConcluidasLista"></ul>
+
+
+
+
+
+
+
+
 
 <script>
 function adicionarTarefa() {
 
     let tarefaDigitada = document.getElementById("tarefa").value;
 
-   // document.getElementById("tarefasDiarias").innerText = tarefaDigitada;//
+  
 
     let lista = document.createElement("li");
-    lista.innerText = tarefaDigitada;
+    
+    let texto = document.createElement("span");
+    texto.innerText = tarefaDigitada;
+    
+    let botao = document.createElement("button");
+   
+    botao.innerText = "Feito";
+
+    botao.onclick = function () {
+      
+      document.getElementById("tarefasConcluidasLista").innerText = tarefaDigitada;
+
+        lista.remove();
+    };
+
+
+    lista.appendChild(texto);
+    lista.appendChild(botao);
+
     document.getElementById("tarefasDiarias").appendChild(lista);
     document.getElementById("tarefa").value = "";
+
+    botao.classList.add("botaoFeito");
+
+
 }
 
 function adicionarTarefaLongoPrazo() {
 
     let longoPrazoDigitada = document.getElementById("tarefaLongoPrazo").value;
 
-    document.getElementById("tarefasParaFazer").innerText = longoPrazoDigitada;
+    let listaLongoPrazo = document.createElement ("li");
+    
+    let textoLongoPrazo = document.createElement ('span');
+    textoLongoPrazo.innerText = longoPrazoDigitada;
+let botaoLongoPrazo = document.createElement ('button');
+botaoLongoPrazo.innerText = "Feito"; 
+
 }
 
+ botaoLongoPrazo.onclick = function () {
+
+ 
+
+    listaLongoPrazo.appendChild(textoLongoPrazo);
+    listaLongoPrazo.appendChild(botaoLongoPrazo);
+ 
+ 
+
+    botaoLongoPrazo.classList.add("botaoFeito");
+    document.getElementById("tarefasParaFazer").appendChild(listaLongoPrazo);
+    document.getElementById("tarefaLongoPrazo").value = "";
+    
+  
+};
+
+  
+
+
+
+
     </script>
+
 
 </body>
 </html>
