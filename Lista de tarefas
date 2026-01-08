@@ -78,23 +78,39 @@ margin-left: 100px;
 
 .tarefasConcluidas {
 
-  background-color: antiquewhite;
-  margin-left: 100px;
+    display: flex;
+        
+        background-color: rgb(248, 221, 162);
+        padding: 50px;
+        gap: 8px;
+
+        margin-left: 100px;
         margin-right: 1000px;
         border-radius: 50px;
-         padding: 10px;
 }
 
 
 .tarefasConcluidasLista {
 
- background-color: antiquewhite;
-margin-left: 100px;
+   display: flex;
+        flex-direction: column;
+        background-color: rgb(248, 221, 162);
+        padding: 200px;
+        gap: 8px;
+
+        margin-left: 100px;
         margin-right: 1000px;
-        border-radius: 50px;
-        padding: 100px;
+        border-radius: 10px;
 }
 
+.blocoConcluidas {
+   position: fixed;
+  top: 20px;
+  right: 400px;
+  width: 400px;
+  max-height: 500px;
+ 
+}
 
 li {
 
@@ -103,6 +119,15 @@ font-size: 50px;
   align-items: center;
   gap: 8px;
   padding: 10px;
+}
+
+ul {
+font-size: 50px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px;
+
 }
 
 /* BOTÕES */
@@ -177,7 +202,7 @@ button:hover {
 </div>
 <ul id="tarefasParaFazer" class="tarefasParaFazer"></ul>
 
-
+<div class="blocoConcluidas">
 
 <div class="tarefasConcluidas">
 <h1>Tarefas Concluidas</h1>
@@ -187,7 +212,7 @@ button:hover {
 
 
 
-
+</div>
 
 
 
@@ -230,20 +255,24 @@ function adicionarTarefa() {
 
 function adicionarTarefaLongoPrazo() {
 
-    let longoPrazoDigitada = document.getElementById("tarefaLongoPrazo").value;
-
-    let listaLongoPrazo = document.createElement ("li");
+  
+      let longoPrazoDigitada = document.getElementById("tarefaLongoPrazo").value;
+      let listaLongoPrazo = document.createElement ("li");
+      let textoLongoPrazo = document.createElement ('span');
     
-    let textoLongoPrazo = document.createElement ('span');
-    textoLongoPrazo.innerText = longoPrazoDigitada;
-let botaoLongoPrazo = document.createElement ('button');
-botaoLongoPrazo.innerText = "Feito"; 
+      textoLongoPrazo.innerText = longoPrazoDigitada;
 
-}
+      let botaoLongoPrazo = document.createElement("button");
 
- botaoLongoPrazo.onclick = function () {
+      botaoLongoPrazo.innerText = "Feito"; 
 
- 
+
+
+botaoLongoPrazo.onclick = function () {
+
+  document.getElementById("tarefasConcluidasLista").appendChild(listaLongoPrazo);
+
+  }
 
     listaLongoPrazo.appendChild(textoLongoPrazo);
     listaLongoPrazo.appendChild(botaoLongoPrazo);
