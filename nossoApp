@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nossoApp</title>
+
+    <script src="nossoApp.js"></script>
+    <link rel="stylesheet" href="nossoApp.css">
+
+</head>
+
+<body>
+    <div>
+        <h1 class="p">Supino com halteres</h1>
+
+        <div class="divCatalogo">
+            <p class="titulo">Catálogo</p>
+
+            <ul id="listaExercicios">
+                <p class="membrosLista">Bíceps</p>
+                <button class="botoesCatalogo" onclick="roscaDireta()">Rosca direta</button>
+                <button class="botoesCatalogo" onclick="roscaAlternada()">Rosca alternada</button>
+                <button class="botoesCatalogo" onclick="roscaMartelo()">Rosca martelo</button>
+                <button class="botoesCatalogo">Rosca concentrada</button>
+                <button class="botoesCatalogo">Rosca 21</button>
+                <p class="membrosLista">Peito</p>
+                <button class="botoesCatalogo">Supino com halteres</button>
+                <button class="botoesCatalogo">Supino com halteres</button>
+                <button class="botoesCatalogo">Supino com halteres</button>
+                <button class="botoesCatalogo">Supino com halteres</button>
+                <p class="membrosLista">Ombro</p>
+                <button class="botoesCatalogo">Supino com halteres</button>
+                <button class="botoesCatalogo">Supino com halteres</button>
+                <button class="botoesCatalogo">Supino com halteres</button>
+
+            </ul>
+
+        </div>
+
+
+
+    </div>
+<div id="exercicios" class="exercicios">
+<h1>Bíceps</h1>
+<h3 id="roscaDireta">Rosca Direta</h3>
+<p>
+
+
+</p>
+
+<h3 id="roscaAlternada">Rosca Alternada</h3>
+<p>Descrição</p>
+
+
+
+
+<h3 id="roscaMartelo">Rosca Martelo</h3>
+<p>Descrição</p>
+
+
+<h1>NOME DA REGIÃO</h1>
+<h3 id="NOMEDOID">NOME DO EXERCICIO</h3>
+<p>Descrição</p>
+
+
+
+</div>
+</body>
+
+</html>
